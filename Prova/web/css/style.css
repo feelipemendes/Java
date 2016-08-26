@@ -1,0 +1,43 @@
+﻿#box{
+				/*MELHOR SOLUÇÃO
+				
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				position: absolute;
+				margin: auto;
+				
+				
+				
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				*/
+				
+				/*	MINHA SOLUÇÃO*/
+				position: relative;
+				left: 45%;
+				top: 50%;
+				height: 8%;
+				width: 17%;
+    
+			
+				
+				border-style: solid;
+				border-radius: 11px;
+				
+}
+#botao{
+			    background-color: white;
+				left: 44%;
+				top: 33%;
+				position: relative;
+}
+#combo{
+				background-color: white;
+				left: 44%;
+				top: 33%;
+				position: relative;
+}
+			
