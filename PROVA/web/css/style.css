@@ -1,0 +1,24 @@
+﻿#box{
+				position: relative;
+				left: 45%;
+				top: 50%;
+				height: 8%;
+				width: 17%;
+    			border-style: solid;
+				border-radius: 11px;
+				
+				
+}
+#botao{
+			    background-color: white;
+				left: 44%;
+				top: 33%;
+				position: relative;
+}
+#combo{
+				background-color: white;
+				left: 44%;
+				top: 33%;
+				position: relative;
+}
+			

@@ -1,0 +1,32 @@
+﻿element.style {
+    height: 20.688px;
+}
+#box{
+				
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -100px;
+			width: 193px;
+			padding-bottom: 1%;
+			padding-top: 1%;
+			padding-right: 1%;
+			padding-left: 1%;
+			/* height: 10%; */
+			border-style: solid;
+			border-radius: 11px;
+				
+				
+}
+#botao{
+			    
+			background-color: white;
+			width: 87px;
+			margin-left: 4%;				
+}
+#combo{
+			background-color: white;
+			width: 87px;
+			position: relative;
+}
+			
