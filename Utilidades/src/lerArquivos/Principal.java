@@ -28,34 +28,31 @@ public class Principal {
 
         Scanner input = new Scanner(System.in);
         String flag = "s";
-        while (flag.compareToIgnoreCase("s") == 0) {
 
-            File f = null;
-            File[] paths;
+        File f = null;
+        File[] paths;
 
-            try {
-                f = new File("\\\\gmz3fs02\\intsgs-p\\j4000c\\Backup\\");
+        try {
+            f = new File("\\\\gmz3fs02\\intsgs-p\\j4000c\\Backup\\");
 
-                paths = f.listFiles();
+            paths = f.listFiles();
 
-                int j = 1;
+            int j = 1;
 
-                for (int i = paths.length - 1; i >= (paths.length) - 7; i--) {
-                    String name = "\\\\gmz3fs02\\intsgs-p\\j4000c\\Backup\\" + paths[i].getName();
-                    Contador cl = new Contador();
-                    TransformaData data = new TransformaData();
+            for (int i = paths.length - 1; i >= (paths.length) - 5; i--) {
+                String name = "\\\\gmz3fs02\\intsgs-p\\j4000c\\Backup\\" + paths[i].getName();
+                //Criação do objeto para poder usar o metodo contalinhas;    
+                Contador cl = new Contador();
+                //Criação do objeto para poder usar o metodo transformadata; 
+                TransformaData data = new TransformaData();
+                //Impressao da data e da quantidade de linhas
+                System.out.println(j++ + "- Data:" + data.transforma(name.substring(52, 60)) + " Qntd:" + cl.contaLinhas(name));
 
-                    System.out.println(j++ + " " + data.transforma(name.substring(18, 26)) + " :" + cl.contaLinhas(name));
-
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-
-            System.out.println("Deseja continuar? S/N ");
-            flag = input.nextLine();
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 
 }
