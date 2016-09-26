@@ -4,19 +4,11 @@
  * and open the template in the editor.
  */
 package lerArquivos;
-
-import Strings.TransformaData;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
-import java.io.PrintWriter;
 import java.util.Scanner;
+import Strings.TransformaData;
+import java.util.Collections;
+import java.io.File;
+import java.util.ArrayList;
 
 /**
  *
@@ -29,7 +21,9 @@ public class Principal {
         Scanner input = new Scanner(System.in);
         String flag = "s";
 
-        File f = null;
+        ArrayList xmls1 = new ArrayList();
+
+        File f; //= null;
         File[] paths;
 
         try {
@@ -40,17 +34,25 @@ public class Principal {
             int j = 1;
 
             for (int i = paths.length - 1; i >= (paths.length) - 5; i--) {
+
                 String name = "\\\\gmz3fs02\\intsgs-p\\j4000c\\Backup\\" + paths[i].getName();
                 //Criação do objeto para poder usar o metodo contalinhas;    
                 Contador cl = new Contador();
                 //Criação do objeto para poder usar o metodo transformadata; 
                 TransformaData data = new TransformaData();
-                //Impressao da data e da quantidade de linhas
-                System.out.println(j++ + "- Data:" + data.transforma(name.substring(52, 60)) + " Qntd:" + cl.contaLinhas(name));
+                //insert a string and the numbers of line about the file
+                XML xml = new XML(data.transforma(name.substring(52, 60)), cl.contaLinhas(name));
 
+                xmls1.add(xml);//add element xml into xmls arraylist
             }
-        } catch (Exception e) {
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
+        } finally {
+            Collections.reverse(xmls1);
+            //print a reverse xml arraylist
+            for (int i = 0; i < xmls1.size(); i++) {
+                System.out.println(xmls1.get(i));
+            }
         }
 
     }
